@@ -26,10 +26,10 @@ router.get('/:id', withAuth, async (req, res) => {
       ],
     });
 
-    const Checkings = checkingsData.get({ plain: true });
+    const checks = checkingsData.get({ plain: true });
 
     res.render('Checkings', {
-      ...Checkings,
+      ...checks,
       logged_in: req.session.logged_in
     });
   } catch (err) {
