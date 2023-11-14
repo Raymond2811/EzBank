@@ -11,7 +11,7 @@ router.get('/:id', withAuth, async (req, res) => {
             include: [
                 {
                     model: Checkings,
-                    attributes: ['id', 'name', 'balance'],
+                    attributes: ['id', 'name', 'balance', 'transactions'],
                 },
             ],
         });
