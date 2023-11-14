@@ -1,0 +1,17 @@
+[
+  {
+    "name": "EzBanks Checkings Account",
+    "balance": 1000,
+    "date_created": "11/14/2023"
+  },
+  {
+    "name": "EzBanks Checkings Account",
+    "balance": 100,
+    "date_created": "11/14/2023"
+  },
+  {
+    "name": "EzBanks Checkings Account",
+    "balance": 10,
+    "date_created": "11/14/2023"
+  }
+]
