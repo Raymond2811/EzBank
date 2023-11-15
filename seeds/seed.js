@@ -1,7 +1,7 @@
 const { User, Checkings, AccOverview } = require('../models');
-const userData = require('./userData.json');
-const checkingsData = require('./CheckingsData.json');
-const accOverviewData = require('./AccOverviewData.json');
+const userData = require('./userData');
+const checkingsData = require('./CheckingsData');
+const accOverviewData = require('./AccOverviewData');
 const sequelize = require('../config/connection');
 
 const seedDatabase = async () => {
@@ -17,7 +17,7 @@ const seedDatabase = async () => {
       user_id: users[index % users.length].id,
     }));
     const checkings = await Checkings.bulkCreate(checkingsWithUserIds, { returning: true });
-    console.log(`----- ${checkings.length} CHECKINGS ACCOUNTS SEEDED -----\n`);
+    console.log(`----- ${checkings.length} CHECKING ACCOUNTS SEEDED -----\n`);
 
     const accOverviewDataWithTransactions = accOverviewData.map(entry => ({
       ...entry,
