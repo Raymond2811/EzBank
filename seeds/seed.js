@@ -21,7 +21,7 @@ const seedDatabase = async () => {
 
     const accOverviewDataWithTransactions = accOverviewData.map(entry => ({
       ...entry,
-      transactions: entry.transactions.join(', '),
+      transactions: entry.transactions,
     }));
     
     const accOverview = await AccOverview.bulkCreate(accOverviewDataWithTransactions, { returning: true });

@@ -14,12 +14,16 @@ AccOverview.init(
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+            defaultValue: 'EzBank Checking Account',
         },
         balance: {
             type: DataTypes.INTEGER,
+            allowNull: false,
+            defaultValue: 0,
         },
         transactions:{
             type: DataTypes.STRING,
+            defaultValue: '',
         },
         checkings_id: {
             type: DataTypes.INTEGER,
