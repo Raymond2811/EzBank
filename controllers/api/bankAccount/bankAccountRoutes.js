@@ -4,10 +4,55 @@ const withAuth = require('../../../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const CheckingData = await Checkings.findAll ({
-      include:[{ model: User}],
+    const CheckingData = await User.findAll ({
+      include:[{ model: Checkings}],
     });
     res.json(CheckingData);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const CheckingData = await User.findByPk(req.params.id, {
+      include: [{ model: Checkings }],
+    });
+
+    if (!CheckingData) {
+      res.status(404).json({ message: 'No Checking found with this id!' });
+      return;
+    }
+
+    res.status(200).json(CheckingData);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.post('/', async (req, res) => {
+  try {
+    const CheckingData = await Checkings.create(req.body);
+    res.status(200).json(CheckingData);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+});
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const CheckingData = await Checkings.destroy({
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (!CheckingData) {
+      res.status(404).json({ message: 'No Checking found with this id!' });
+      return;
+    }
+
+    res.status(200).json(CheckingData);
   } catch (error) {
     res.status(500).json(error);
   }
