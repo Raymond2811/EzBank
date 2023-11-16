@@ -14,9 +14,12 @@ Checkings.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: 'EzBank Checking Account',
     },
     balance: {
       type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0,
     },
     date_created: {
       type: DataTypes.DATE,
