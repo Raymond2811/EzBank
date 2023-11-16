@@ -1,80 +1,15 @@
-const router = require('express').Router();
-const { Homepage, User } = require('../models');
-const withAuth = require('../utils/auth');
+// const router = require('express').Router();
+// const { Homepage, User } = require('../models');
+// const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+// router.get('/login', (req, res) => {
 
-  try {
-    const homeData = await Homepage.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+//   if (req.session.logged_in) {
+//     res.redirect('/profile');
+//     return;
+//   }
 
-    const homePage = homeData.map((homepageEntry) => homepageEntry.get({ plain: true }));
+//   res.render('login');
+// });
 
-    res.render('homepage', { 
-      homePage, 
-      logged_in: req.session.logged_in 
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/project/:id', async (req, res) => {
-
-  try {
-    const homeData = await Homepage.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
-
-    const project = homeData.get({ plain: true });
-
-    res.render('project', {
-      ...project,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/profile', withAuth, async (req, res) => {
-
-  try {
-    const userData = await User.findByPk(req.session.user_id, {
-      attributes: { exclude: ['password'] },
-      include: [{ model: Homepage }],
-    });
-
-    const user = userData.get({ plain: true });
-
-    res.render('profile', {
-      ...user,
-      logged_in: true
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
-router.get('/login', (req, res) => {
-
-  if (req.session.logged_in) {
-    res.redirect('/profile');
-    return;
-  }
-
-  res.render('login');
-});
-
-module.exports = router;
+// module.exports = router;
