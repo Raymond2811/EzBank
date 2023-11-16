@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const bankaccountRoutes = require('./bankaccountRoutes');
+const bankAccountRoutes = require('./bankAccountRoutes');
 const overview = require('./overview');
 
-router.use('/',bankaccountRoutes);
+router.use('/',bankAccountRoutes);
 router.use('/accountoverview',overview);
 
 module.exports = router;
