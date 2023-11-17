@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Overview</title>
+</head>
+
+<body>
+
+    <main>
+        <h1>{{bankName}}</h1>
+        {{#each accOverviewData}}
+            <div class="account-purchase">
+                <h2>{{name}}</h2>
+                <p>Balance: ${{balance}}</p>
+                <div class="transaction-history">
+                    <h3>Transaction History</h3>
+                    {{#if transactions.length}}
+                        <ul>
+                            {{#each transactions}}
+                            <li>{{this}}</li>
+                            {{/each}}
+                        </ul>
+                    {{else}}
+                        <p>No transactions available.</p>
+                    {{/if}}
+                </div>
+            </div>
+        {{/each}}
+    </main>
+</body>
+</html>
