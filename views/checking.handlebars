@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checking Account</title>
+</head>
+<body>
+    <header>
+
+    </header>
+
+    <main>
+        {{#each checkingAccounts}}
+        <div class="card">
+            <h2>{{name}}</h2>
+            <p>Balance: ${{balance}}</p>
+            <p>Date Created: {{date_created}}</p>
+        </div>
+        {{/each}}
+
+        <button class="new-account" onclick="openNewAccount()">Open a New Checking Account</button>
+    </main>
+</body>
+</html>
