@@ -1,17 +1,27 @@
 const router = require('express').Router();
-const { AccOverview, Checkings } = require('../../../../models');
-const withAuth = require('../../../../utils/auth');
+const { AccOverview, Checkings } = require('../../models');
+const withAuth = require('../../utils/auth');
 
 router.get('/', async (req, res) => {
-    try {
-      const AccOverviewData = await AccOverview.findAll ({
-        include:[{ model: Checkings}],
-      });
-      res.json(AccOverviewData);
-    } catch (error) {
-      res.status(500).json(error);
-    }
-  });
+  try {
+    const checkingsData = await Checkings.findAll ({
+      include:[{ model: AccOverview}],
+    });
+    res.json(checkingsData);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+});
+
+router.post('/', async (req, res) => {
+  try {
+    const checkingsData = await Checkings.create(req.body);
+    res.status(200).json(checkingsData);
+  } catch (error) {
+    res.status(400).json(error);
+  }
+
+});
 
 // router.get('/:id', withAuth, async (req, res) => {
 //     try {
