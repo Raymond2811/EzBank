@@ -41,13 +41,33 @@ nav a {
   text-decoration: none;
 }
 
-  /* .login {
+.main {
+  background: url('') no-repeat center center fixed;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: white;
+  padding: 20px;
+  width: 30%;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+  margin: 10px 0 10px 10px;
+}
+
+.login-container h2 {
+  text-align: center;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  margin: 20px auto;
-  }
+}
 
-  label, input, button {
+label, input, button {
   margin: 10px 0;
-  } */
+}
