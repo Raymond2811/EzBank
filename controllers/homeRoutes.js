@@ -9,9 +9,8 @@ router.get('/homepage', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/homepage.html'));
 });
   
-
-// router.get('/aboutus', (req, res) => {
-//     res.sendFile(path.join(__dirname, '../public/about.html'));
-//   });
+router.get('/aboutus', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/about.html'));
+});
 
 module.exports = router;
