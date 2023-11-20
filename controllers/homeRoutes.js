@@ -1,15 +1,17 @@
-// const router = require('express').Router();
-// const { Homepage, User } = require('../models');
-// const withAuth = require('../utils/auth');
+const router = require('express').Router();
+const path = require('path');
 
-// router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
+    res.redirect('/homepage');
+});
 
-//   if (req.session.logged_in) {
-//     res.redirect('/profile');
-//     return;
-//   }
+router.get('/homepage', (req, res) => {
+    res.sendFile(path.join(__dirname, '../public/homepage.html'));
+});
+  
 
-//   res.render('login');
-// });
+// router.get('/aboutus', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../public/about.html'));
+//   });
 
-// module.exports = router;
+module.exports = router;
