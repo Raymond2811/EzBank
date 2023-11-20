@@ -1,24 +1,38 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
-}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100vh;
+  margin: 0;
+  }
 
-.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
-}
+  #header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 20px 20px 0;
+  }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
-}
+  h1, p {
+  margin: 0;
+  }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
-}
+  #about-us {
+  display: flex;
+  align-items: center;
+  }
+
+  #about-us h2 {
+  margin-right: 10px; 
+  }
+
+  #login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px auto;
+  }
+
+  label, input, button {
+  margin: 10px 0;
+  }
