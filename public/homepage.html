@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
-    <div id="header">
+    <header>
         <div>
             <h1>EZ Bank</h1>
             <p>Banking made EZ</p>
         </div>
-        <div id="about-us">
+        <div class="about-us">
             <h2>About us</h2>
             <form action="/search" method="get">
                 <label for="search">Search:</label>
@@ -20,9 +20,9 @@
                 <button type="submit">Search</button>
             </form>
         </div>
-    </div>
+    </header>
 
-    <div id="login">
+    <main class="login">
         <h2>Login</h2>
         <form action="/login" method="post">
             <label for="username">Username:</label>
@@ -33,7 +33,29 @@
 
             <button type="submit">Login</button>
         </form>
-    </div>
+    </main>
+
+    <footer>
+        <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p>For inquiries and assistance, feel free to reach out:</p>
+            <ul>
+                <li>Phone: +1 (555) 123-4567</li> 
+                <li>Email: info@ezbanksupport.com</li> 
+            </ul>
+        </div>
+    
+        <div class="social-media">
+            <h3>Connect With Us</h3>
+            <p>Stay updated and engaged through our social media channels:</p>
+            <ul>
+            <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+            <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+            <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+
     <script src="/js/index.js"></script>
     <script src="/js/login.js"></script>
     <script src="/js/logout.js"></script>
