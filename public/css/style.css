@@ -1,32 +1,47 @@
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  height: 100vh;
   margin: 0;
-  }
+}
 
-  header {
+header {
+  background-color: #333;
+  color: white;
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  margin: 20px 20px 0;
-  }
-
-  h1, p {
-  margin: 0;
-  }
-
-  .about-us {
-  display: flex;
   align-items: center;
-  }
+  padding: 20px;
+}
 
-  .about-us h2 {
-  margin-right: 10px; 
-  }
+.brand {
+  text-align: left;
+  flex: 1; 
+}
 
-  .login {
+.brand h1, p {
+  margin: 0;
+}
+
+nav {
+  text-align: right;
+  margin-left: auto;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+  /* .login {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +50,4 @@ body {
 
   label, input, button {
   margin: 10px 0;
-  }
+  } */
