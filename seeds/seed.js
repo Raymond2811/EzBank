@@ -9,7 +9,10 @@ const seedDatabase = async () => {
   try {
     console.log('----- SEEDING DATABASE STARTED -----\n');
 
-    const users = await User.bulkCreate(userData, { returning: true });
+    const users = await User.bulkCreate(userData, {
+      individualHooks: true,
+      returning: true,
+    });
     console.log(`----- ${users.length} USERS SEEDED -----\n`);
 
     const checkingsWithUserIds = checkingsData.map((checkings, index) => ({
