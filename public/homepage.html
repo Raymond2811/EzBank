@@ -4,46 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EZ Bank</title>
-    <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            height: 100vh;
-            margin: 0;
-        }
-
-        #header {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-            margin: 20px 20px 0;
-        }
-
-        h1, p {
-            margin: 0;
-        }
-
-        #about-us {
-            display: flex;
-            align-items: center;
-        }
-
-        #about-us h2 {
-            margin-right: 10px; /* Adjust margin as needed */
-        }
-
-        #login {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Center the login form horizontally */
-            margin: 20px auto; /* Add margin and use auto for horizontal centering */
-        }
-
-        label, input, button {
-            margin: 10px 0;
-        }
-    </style>
+    <link rel="stylesheet" href="/public/css/style.css">
 </head>
 <body>
     <div id="header">
@@ -73,5 +34,8 @@
             <button type="submit">Login</button>
         </form>
     </div>
+    <script src="/js/index.js"></script>
+    <script src="/js/login.js"></script>
+    <script src="/js/logout.js"></script>
 </body>
 </html>
