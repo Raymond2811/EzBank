@@ -45,7 +45,7 @@ nav a {
   text-decoration: none;
 }
 
-.main {
+backgroundimg {
   background: url('') no-repeat center center fixed;
   background-size: cover;
   height: 100vh;
@@ -109,4 +109,21 @@ li {
 a {
   color: white;
   text-decoration: none;
+}
+
+/* About Us html */
+
+.about-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.about-container img {
+  width: 50%;
+  margin-right: 20px;
+}
+
+.about-container section {
+  flex: 1;
 }
