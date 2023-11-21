@@ -2,7 +2,7 @@ const router = require('express').Router();
 const path = require('path');
 
 router.get('/', (req, res) => {
-    res.redirect('/public/homepage');
+    res.redirect('/homepage');
 });
 
 router.get('/homepage', (req, res) => {
