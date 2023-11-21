@@ -127,3 +127,7 @@ a {
 .about-container section {
   flex: 1;
 }
+
+.about-container section p {
+  margin-bottom: 10px;
+}
