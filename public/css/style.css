@@ -1,49 +1,21 @@
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+header, .project:not(:last-child) {
+  border-bottom: 1px solid #ccc;
 }
 
-header {
-  background-color: #333;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px;
-}
-
-.brand {
-  text-align: left;
-  flex: 1; 
-}
-
-.brand h1, p {
-  margin: 0;
-}
-
-nav {
-  text-align: right;
-  margin-left: auto;
-}
-
-nav ul {
-  list-style: none;
-  margin: 0;
+.no-button {
+  background: none;
+  border: none;
   padding: 0;
-}
-
-nav li {
-  display: inline-block;
-  margin-left: 20px;
-}
-
-nav a {
-  color: white;
+  cursor: pointer;
+  color: #1b89bc;
   text-decoration: none;
+  font-size: 100%;
 }
+
+
+.no-button:hover {
+  color: #065b83;
+  text-decoration: underline;
 
 backgroundimg {
   background: url('') no-repeat center center fixed;
@@ -100,10 +72,13 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
+
 }
 
-li {
-  margin-bottom: 5px;
+.dollar-amount {
+  color: #056605;
+  font-weight: bold;
+  margin-left: -5px;
 }
 
 a {
