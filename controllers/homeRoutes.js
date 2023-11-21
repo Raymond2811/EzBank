@@ -13,4 +13,8 @@ router.get('/aboutus', (req, res) => {
     res.sendFile(path.join(__dirname, '../public/about.html'));
 });
 
+router.get('/signup', (req, res) => {
+    res.render('enroll');
+});
+
 module.exports = router;
