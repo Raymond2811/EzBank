@@ -1,0 +1,16 @@
+/* checking.css */
+
+body {
+    /* background-color: #328f8a; */
+    background: linear-gradient(45deg,#328f8a,#08ac4b);
+    background-repeat: no-repeat;
+    font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .button-type {
+    position: fixed;
+    right: 10px;
+    top: 5px;
+  }
