@@ -6,7 +6,7 @@
     <title>Checking Account</title>
 </head>
 <body>
-    <header>
+    {{!-- <header>
         <div>
             <h1>EzBank</h1>
         </div>
@@ -15,17 +15,21 @@
             <a href="#">Help</a>
             <a href="#">Logout</a>
         </nav>
-    </header>
+    </header> --}}
 
     <main>
         <h1>{{name}}</h1>
         {{#each Checkings}}
-        <div class="card">
-            <h2>{{name}}</h2>
-            <p>Balance: ${{balance}}</p>
-            <p>Date Created: {{date_created}}</p>
-        </div>
+        <button class="card-button" data-id="{{id}}">
+            <div class="card">
+                <h2>{{name}}</h2>
+                <p>Balance: ${{balance}}</p>
+                <p>Date Created: {{date_created}}</p>
+            </div>
+        </button>
         {{/each}}
+        <script src="./js/checking.js"></script>
     </main>
+    
 </body>
 </html>
