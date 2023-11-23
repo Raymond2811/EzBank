@@ -12,10 +12,11 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { 'Content-Type': 'application/json' },
     });
-
+    const result = await response.json();
+    console.log(result);
     if (response.ok) {
       // If successful, redirect the browser to the profile page
-      document.location.replace('/profile');
+      document.location.replace('/bankaccount');
     } else {
       alert(response.statusText);
     }
