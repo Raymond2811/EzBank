@@ -22,6 +22,7 @@ router.get('/signup', (req, res) => {
 router.get('/bankaccount', withAuth, async (req, res) => {
     try {
       const CheckingData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
         include: [{ model: Checkings }],
       });
       
@@ -40,8 +41,9 @@ router.get('/bankaccount', withAuth, async (req, res) => {
 
   router.get('/checking/:id', withAuth, async (req, res) => {
     try {
-      const CheckingData = await Checkings.findByPk(req.params.id, {
+      const CheckingData = await Checkings.findByPk(req.session.user_id, {
         // include: [{ model: Checkings }],
+        attributes: { exclude: ['password'] },
       });
       
       if (!CheckingData) {
@@ -50,7 +52,10 @@ router.get('/bankaccount', withAuth, async (req, res) => {
       }
       const checkingData = CheckingData.get({plain:true});
       console.log(checkingData);
-      res.render('AccOverview',checkingData);
+      res.render('AccOverview', {
+        ...CheckingData,
+        logged_in: true
+      });
     } catch (error) {
       console.log(error);  
       res.status(500).json(error);
