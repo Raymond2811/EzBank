@@ -18,15 +18,14 @@
     </header>
 
     <main>
-        {{#each checkingAccounts}}
+        <h1>{{name}}</h1>
+        {{#each Checkings}}
         <div class="card">
             <h2>{{name}}</h2>
             <p>Balance: ${{balance}}</p>
             <p>Date Created: {{date_created}}</p>
         </div>
         {{/each}}
-
-        <button class="new-account" onclick="openNewAccount()">Open a New Checking Account</button>
     </main>
 </body>
 </html>
