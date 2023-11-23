@@ -6,16 +6,16 @@
     <title>Checking Account</title>
 </head>
 <body>
-    {{!-- <header>
+    <header>
         <div>
             <h1>EzBank</h1>
         </div>
         <nav>
             <a href="#">About Us</a>
             <a href="#">Help</a>
-            <a href="#">Logout</a>
+            <a id="logout" href="/logout">Logout</a>
         </nav>
-    </header> --}}
+    </header>
 
     <main>
         <h1>{{name}}</h1>
@@ -30,6 +30,16 @@
         {{/each}}
         <script src="./js/checking.js"></script>
     </main>
+
+    <footer>
+        {{#if logged_in}}
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
+    </footer>
     
+    <script src="./js/logout.js"></script>
+
 </body>
 </html>
