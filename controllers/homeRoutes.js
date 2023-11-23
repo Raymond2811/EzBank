@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const path = require('path');
 const {User, Checkings} = require('../models');
+const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
     res.redirect('/homepage');
@@ -18,7 +19,7 @@ router.get('/signup', (req, res) => {
     res.render('enroll');
 });
 
-router.get('/bankaccount', async (req, res) => {
+router.get('/bankaccount', withAuth, async (req, res) => {
     try {
       const CheckingData = await User.findByPk(req.session.user_id, {
         include: [{ model: Checkings }],
@@ -37,7 +38,7 @@ router.get('/bankaccount', async (req, res) => {
     }
   });
 
-  router.get('/checking/:id', async (req, res) => {
+  router.get('/checking/:id', withAuth, async (req, res) => {
     try {
       const CheckingData = await Checkings.findByPk(req.params.id, {
         // include: [{ model: Checkings }],
