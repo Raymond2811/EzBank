@@ -49,7 +49,13 @@ router.get('/checking/:id', withAuth, async (req, res) => {
       return;
     };
     const checkingData = CheckingData.get({plain:true});
-    checkingData.AccOverview.transactions = checkingData.AccOverview.transactions.split(',');
+
+    if (checkingData.AccOverview) {
+      if (checkingData.AccOverview.transactions) {
+        checkingData.AccOverview.transactions = checkingData.AccOverview.transactions.split(',');
+      }
+    };
+
     console.log(checkingData);
     res.render('AccOverview', {
       ...checkingData.AccOverview,
