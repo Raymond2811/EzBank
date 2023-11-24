@@ -1,27 +1,19 @@
-<!-- aboutus.handlebars -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us</title>
-    <link rel="stylesheet" href="./css/about.css">
-</head>
 <body>
-    <header>
-        <a href="/homepage">
-            <div class="brand">
-                <h1>EZ Bank</h1>
-                <p>Banking made EZ</p>
-            </div>
-        </a>
-        <nav>
-            <ul>
-                <li><a href="/aboutus">About Us</a></li>
-                <li><a href="/espanol">Español</a></li>
-                <li><a href="/signon">Sign On</a></li>
-            </ul>
-        </nav>
+    <header id="header">
+    <div id="logo-container">
+        <h1>EZ Bank</h1>
+        <p>Banking Made EZ</p>
+    </div>
+    <nav id="header-content">
+        <div id="about-us">
+        <a href="/aboutus"><h2>About Us</h2></a>
+        <a href="/espanol"><h2>Español</h2></a>
+        </div>
+        <div id="search-container">
+        <input type="text" id="search-input" placeholder="Search...">
+        <button type="button" id="search-button">Search</button>
+        </div>
+    </nav>
     </header>
 
     <main class="container">

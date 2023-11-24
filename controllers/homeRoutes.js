@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const path = require('path');
 const {User, Checkings, AccOverview} = require('../models');
 const withAuth = require('../utils/auth');
 
@@ -8,11 +7,11 @@ router.get('/', (req, res) => {
 });
 
 router.get('/homepage', (req, res) => {
-  res.render('homepage',{layout:'alt'});
+  res.render('homepage');
 });
   
 router.get('/aboutus', (req, res) => {
-  res.render('aboutus', {layout:'alt'});
+  res.render('aboutus');
 });
 
 router.get('/signup', (req, res) => {
