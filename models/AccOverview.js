@@ -42,5 +42,4 @@ AccOverview.init(
       }
 );
 
-
 module.exports = AccOverview;
