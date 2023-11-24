@@ -27,3 +27,9 @@ document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);
 
+const passwordInput = document.getElementById('password-login');
+const showPasswordCheckbox = document.getElementById('show-password');
+
+showPasswordCheckbox.addEventListener('change', function () {
+  passwordInput.type = this.checked ? 'text' : 'password';
+});
