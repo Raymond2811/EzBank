@@ -53,7 +53,7 @@ router.get('/checking/:id', withAuth, async (req, res) => {
     console.log(checkingData);
     res.render('AccOverview', {
       ...checkingData.AccOverview,
-      logged_in: true, layout:'alt'
+      logged_in: true,
     });
   } catch (error) {
     console.log(error);  
