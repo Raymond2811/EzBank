@@ -5,40 +5,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fund My Project!</title>
-  {{!-- <link rel="stylesheet" href="/css/jass.css"> --}}
   <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-     <div id="header">
-            <div id="logo-container">
-                <h1>EZ Bank</h1>
-                <p>Banking Made EZ</p>
-            </div>
-            <div id="header-content">
-                <div id="about-us">
-                    <h2>About us</h2>
-                </div>
-                <div id="search-container">
-                    <input type="text" id="search-input" placeholder="Search...">
-                    <button type="button" id="search-button">Search</button>
-                </div>
-            </div>
+  {{!-- <div class="flex-column justify-space-around">
+    <header id="header">
+      <div id="logo-container">
+        <h1>EZ Bank</h1>
+        <p>Banking Made EZ</p>
+      </div>
+      <nav id="header-content">
+        <div id="about-us">
+          <a href="/aboutus"><h2>About Us</h2></a>
+          <a href="/espanol"><h2>Español</h2></a>
         </div>
-    <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
+        <div id="search-container">
+          <input type="text" id="search-input" placeholder="Search...">
+          <button type="button" id="search-button">Search</button>
+        </div>
+      </nav>
+    </header>
+    <main class="container container-fluid mt-5"> --}}
       {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
+    {{!-- </main> --}}
   </div>
 
-  <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
-
 </html>
