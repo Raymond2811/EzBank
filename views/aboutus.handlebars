@@ -7,8 +7,8 @@
   </div>
   <nav id="header-content">
     <div id="about-us">
-      <a href="/aboutus"><h2>About Us</h2></a>
-      <a href="/espanol"><h2>Español</h2></a>
+      <a href="/aboutus" id="aboutUsLink"><h2>About Us</h2></a>
+      <a href="#" id="languageLink" onclick="toggleLanguage()"><h2>Español</h2></a>
     </div>
   </nav>
 </header>
@@ -17,67 +17,88 @@
   <div class="about-container">
     <img src="{{imagePath}}" alt="About us Image" />
     <section>
-      <h2>Who are we?</h2>
-      <p>Welcome to Ezbank, where simplicity meets sophistication in the world
-        of digital banking. Our mission is to make managing your finances
-        effortless, allowing you to focus on what truly matters to you. Founded
-        with a vision to provide hassle-free financial services, Ezbank is not
-        just a bank; it's a trusted companion on your journey to financial
-        well-being. We understand that your time is valuable, and that's why
-        we've crafted a seamless banking experience that puts you in control of
-        your money, providing easy access whenever you need it.
-      </p>
-      <p>
-        At Ezbank, we've redefined traditional banking to bring you a modern and
-        secure financial experience. Our digital platform ensures that you have
-        easy access to your accounts, and we prioritize the security of your
-        financial data, employing state-of-the-art encryption and authentication
-        measures. Rest easy knowing that your transactions and personal
-        information are safeguarded with the utmost care.
-      </p>
-      <p>
-        But Ezbank is more than just a platform for transactions; it's a
-        community. We believe in fostering a sense of belonging among our users,
-        and we're here to support you on your financial endeavors. Whether
-        you're saving for a dream vacation, planning for the future, or just
-        managing day-to-day expenses, Ezbank is here to help you achieve your
-        goals.
-      </p>
-      <p>
-        Join us on this journey of financial empowerment and experience banking
-        the easy way with Ezbank. Your financial freedom starts here.
-      </p>
+      <div id="englishContent">
+        <h2>Who are we?</h2>
+        <p>Welcome to Ezbank, where simplicity meets sophistication in the world
+          of digital banking. Our mission is to make managing your finances
+          effortless, allowing you to focus on what truly matters to you. Founded
+          with a vision to provide hassle-free financial services, Ezbank is not
+          just a bank; it's a trusted companion on your journey to financial
+          well-being. We understand that your time is valuable, and that's why
+          we've crafted a seamless banking experience that puts you in control of
+          your money, providing easy access whenever you need it.
+        </p>
+        <p>
+          At Ezbank, we've redefined traditional banking to bring you a modern and
+          secure financial experience. Our digital platform ensures that you have
+          easy access to your accounts, and we prioritize the security of your
+          financial data, employing state-of-the-art encryption and authentication
+          measures. Rest easy knowing that your transactions and personal
+          information are safeguarded with the utmost care.
+        </p>
+        <p>
+          But Ezbank is more than just a platform for transactions; it's a
+          community. We believe in fostering a sense of belonging among our users,
+          and we're here to support you on your financial endeavors. Whether
+          you're saving for a dream vacation, planning for the future, or just
+          managing day-to-day expenses, Ezbank is here to help you achieve your
+          goals.
+        </p>
+        <p>
+          Join us on this journey of financial empowerment and experience banking
+          the easy way with Ezbank. Your financial freedom starts here.
+        </p>
+      </div>
+
+      <!-- Spanish content -->
+      <div id="spanishContent" style="display:none;">
+        <h2>¿Quiénes somos?</h2>
+        <p>Bienvenido a Ezbank, donde la simplicidad se encuentra con la sofisticación en el mundo
+          de la banca digital. Nuestra misión es hacer que la gestión de sus finanzas
+          sea sencilla, permitiéndole concentrarse en lo que realmente le importa. Fundada
+          con la visión de proporcionar servicios financieros sin complicaciones, Ezbank no es
+          solo un banco; es un compañero de confianza en su viaje hacia el bienestar financiero. Entendemos
+          que su tiempo es valioso, y por eso hemos creado una experiencia bancaria sin problemas que le brinda
+          el control de su dinero, brindándole fácil acceso siempre que lo necesite.
+        </p>
+        <p>
+          En Ezbank, hemos redefinido la banca tradicional para brindarle una experiencia financiera moderna y segura.
+          Nuestra plataforma digital garantiza que tenga fácil acceso a sus cuentas, y priorizamos la seguridad de sus
+          datos financieros, empleando medidas de cifrado y autenticación de última generación. Duerma tranquilo
+          sabiendo que sus transacciones e información personal están protegidas con el máximo cuidado.
+        </p>
+        <p>
+          Pero Ezbank es más que una plataforma para transacciones; es una comunidad. Creemos en fomentar un sentido de
+          pertenencia entre nuestros usuarios, y estamos aquí para apoyarlo en sus esfuerzos financieros. Ya sea que esté
+          ahorrando para unas vacaciones soñadas, planificando para el futuro o simplemente gestionando gastos cotidianos,
+          Ezbank está aquí para ayudarlo a alcanzar sus metas.
+        </p>
+        <p>
+          Únase a nosotros en este viaje de empoderamiento financiero y experimente la banca de la manera fácil con Ezbank.
+          Su libertad financiera comienza aquí.
+        </p>
+      </div>
     </section>
   </div>
 </main>
 
 <footer>
   <div class="contact-info">
-    <h3>Contact Us</h3>
-    <p>For inquiries and assistance, feel free to reach out:</p>
+    <h3 id="contactHeader">Contact Us</h3>
+    <p id="contactUsText">For inquiries and assistance, feel free to reach out:</p>
     <ul>
       <li>Phone: +1 (555) 123-4567</li>
       <li>Email: info@ezbanksupport.com</li>
     </ul>
   </div>
   <div class="social-media">
-    <h3>Connect With Us</h3>
+    <h3 id="connectHeader">Connect With Us</h3>
     <ul>
-      <li><a
-          href="https://www.facebook.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Facebook</a></li>
-      <li><a
-          href="https://www.twitter.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Twitter</a></li>
-      <li><a
-          href="https://www.instagram.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >Instagram</a></li>
+      <li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+      <li><a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a></li>
     </ul>
   </div>
 </footer>
+
+<script src="./js/language.js"></script>
