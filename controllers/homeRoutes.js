@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const path = require('path');
-const {User, Checkings} = require('../models');
+const {User, Checkings, AccOverview} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/homepage', (req, res) => {
-    res.sendFile(path.join(__dirname, '../public/html/homepage.html'));
+    res.render('homepage',{layout:'alt'});
 });
   
 router.get('/aboutus', (req, res) => {
@@ -42,8 +42,8 @@ router.get('/bankaccount', withAuth, async (req, res) => {
   router.get('/checking/:id', withAuth, async (req, res) => {
     try {
       const CheckingData = await Checkings.findByPk(req.session.user_id, {
-        // include: [{ model: Checkings }],
-        attributes: { exclude: ['password'] },
+        include: [{ model: AccOverview }],
+        // attributes: { exclude: ['password'] },
       });
       
       if (!CheckingData) {
@@ -51,10 +51,11 @@ router.get('/bankaccount', withAuth, async (req, res) => {
         return;
       }
       const checkingData = CheckingData.get({plain:true});
+      checkingData.AccOverview.transactions = checkingData.AccOverview.transactions.split(',');
       console.log(checkingData);
       res.render('AccOverview', {
-        ...CheckingData,
-        logged_in: true
+        ...checkingData.AccOverview,
+        logged_in: true, layout:'alt'
       });
     } catch (error) {
       console.log(error);  
