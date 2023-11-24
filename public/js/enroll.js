@@ -24,3 +24,10 @@ const signupFormHandler = async (event) => {
   document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
+
+const passwordSignupInput = document.getElementById("password-signup");
+const showPasswordSignupCheckbox = document.getElementById("show-password-signup");
+
+showPasswordSignupCheckbox.addEventListener("change", function () {
+  passwordSignupInput.type = this.checked ? "text" : "password";
+});
