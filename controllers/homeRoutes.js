@@ -30,7 +30,6 @@ router.get('/bankaccount', withAuth, async (req, res) => {
       return;
     }
     const checkingData = CheckingData.get({plain:true});
-    console.log(checkingData);
     res.render('checking',checkingData);
   } catch (error) {
     console.log(error);  
@@ -50,13 +49,15 @@ router.get('/checking/:id', withAuth, async (req, res) => {
     };
     const checkingData = CheckingData.get({plain:true});
 
-    if (checkingData.AccOverview) {
-      if (checkingData.AccOverview.transactions) {
-        checkingData.AccOverview.transactions = checkingData.AccOverview.transactions.split(',');
-      }
-    };
-
-    console.log(checkingData);
+    if (!checkingData.AccOverview) {
+      checkingData.AccOverview = {
+        name: 'EzBank Checking Account',
+        balance: 0,
+        transactions: '',
+      };
+    } else if (checkingData.AccOverview.transactions) {
+      checkingData.AccOverview.transactions = checkingData.AccOverview.transactions.split(',');
+    }
     res.render('AccOverview', {
       ...checkingData.AccOverview,
       logged_in: true,
