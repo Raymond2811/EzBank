@@ -2,21 +2,15 @@
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
+This is a super easy-to-use bank app! We designed it to give you a real bank app feel. Once you log in or sign up, you can check out your checking account, showing your balance. If you click on your checking account, you'll jump over to the overview page. There, you can see your transaction history. If you're already a user, you'll see all your transaction data because you've been using your account for a while. Our about us page lets you dive deeper into who we are, and we even offer a Spanish version for those who prefer it. During development, we faced some challenges, especially with the homeRoutes causing errors. With help from tutors, we decided to set up most of our handlers in the homeRoutes. A cool new feature we added is the ability to translate to Spanish. Initially, we wanted to translate everything, but it got tricky, so for now, it's just for the about us page. In the future, we plan to make the Spanish feature available everywhere and to add the option to sign up for a credit card.
 
-- What was your motivation?
-- Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
-- What did you learn?
+## User Story
 
-## Table of Contents (Optional)
+Are you struggling to find a reliable place to manage your finances? No need to worry; EzBank is the perfect banking solution for you, where we prioritize simplicity and convenience. By signing up with EzBank, a checking account will be seamlessly created on your behalf. Expect your debit card to be delivered within 3-5 business days, ensuring you have quick access to your funds.
 
-If your README is long, add a table of contents to make it easy for users to find what they need.
+EzBank goes beyond basic banking. With just a click on your checking account, you can effortlessly view your transaction history, gaining insights into your financial activities. Curious to know more about us? Explore our 'About Us' page for a deeper understanding of EzBank's commitment to making banking truly easy.
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
+Join EzBank today and experience hassle-free banking – because at EzBank, we're dedicated to making your banking experience Ez.
 
 ## Installation
 
@@ -40,8 +34,7 @@ To add a screenshot, create an `assets/images` folder in your repository and upl
 
 ## Credits
 
-Raymond Bautista: https://github.com/Raymond2811
-Josue Hernandez: https://github.com/JosueHernand
+Youtube: https://youtu.be/fWPOD3CAFM8?feature=shared
 
 ## License
 
