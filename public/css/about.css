@@ -1,19 +1,23 @@
-/* about.css*/
+about.css
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 30px;
-    height: 75vh;
-    background: linear-gradient(45deg,#328f8a,#08ac4b);
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 30px;
+  height: 75vh;
+  background: linear-gradient(45deg,#328f8a,#08ac4b);
+}
 
-  h1, p {
-    margin: 0;
-    color: white;
-    text-align: center;
-    text-decoration: underline;
-    text-decoration-color: darkgreen;
-    }
+/* h1, p {
+  margin: 0;
+  color: white;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: darkgreen;
+} */
+
+h2, p {
+  font-size: 17px;
+}
