@@ -178,12 +178,20 @@ margin-bottom: 26px;
   margin: 0 auto;
 }
 
-
-
 .ezcard-copy {
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
   /* margin-left: 700px; */
   border-radius: 75px;
   opacity: 0.9;
   filter: grayscale(10%) contrast(120%);
+}
+
+#show-password {
+  margin-left: -163px;
+  width: 20px;
+  height: 20px;
+}
+
+#show-password-label {
+  margin-left: 20px;
 }
