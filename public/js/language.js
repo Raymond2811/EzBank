@@ -7,6 +7,7 @@ function toggleLanguage() {
   updateAboutUsLink();
   updateMainContent();
   updateFooterContent();
+  updateNavLinksMargin();
 }
 
 function updateLinkText() {
@@ -22,6 +23,14 @@ const aboutUsLinkText = {
 function updateAboutUsLink() {
   const aboutUsLink = document.getElementById('aboutUsLink');
   aboutUsLink.innerText = aboutUsLinkText[currentLanguage];
+}
+function updateNavLinksMargin() {
+  const navLinks = document.querySelectorAll('nav a');
+  const marginValue = currentLanguage === 'spanish' ? '100px' : '100px';
+
+  navLinks.forEach(link => {
+    link.style.marginRight = marginValue;
+  });
 }
 
 const mainContent = {
