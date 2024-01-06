@@ -21,3 +21,38 @@ body {
 h2, p {
   font-size: 17px;
 }
+
+/* Your existing styles for header elements */
+
+.EzBank a {
+  text-decoration: none; /* Remove underline from links */
+  color: white; /* Set text color to white */
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+nav a:hover, nav a:active {
+  color: blue; /* Set the color you want on hover */
+}
+
+header{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 5px; /* Reduce the padding to move the header up */
+  margin-top: -100px;
+}
+
+.EzBank a:hover {
+  color: blue; /* Set the color you want on hover */
+}
+
+#about-us, h2{
+  font-size: 25px;
+  font-weight: bold;
+}
