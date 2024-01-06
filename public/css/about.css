@@ -90,4 +90,12 @@ hr{
 #englishContent, #spanishContent {
   max-width: 750px;
   margin-left: 600px;
+  background-color: white;
+  padding: 10px;
+  box-shadow: rgb(70, 69, 69) 10px 10px 10px;
+  border-radius: 5px;
+}
+
+p {
+  margin-top: 15px;
 }
