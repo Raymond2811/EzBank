@@ -195,3 +195,12 @@ margin-bottom: 26px;
 #show-password-label {
   margin-left: 20px;
 }
+
+header a{
+  color: white;
+  text-decoration: none;
+}
+
+header a:hover{
+  color: blue;
+}
