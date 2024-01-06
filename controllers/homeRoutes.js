@@ -11,7 +11,7 @@ router.get('/homepage', (req, res) => {
 });
   
 router.get('/aboutus', (req, res) => {
-  res.render('aboutus');
+  res.render('aboutus',{about: true});
 });
 
 router.get('/signup', (req, res) => {
