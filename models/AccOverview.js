@@ -23,7 +23,10 @@ AccOverview.init(
     },
     transactions: {
       type: DataTypes.STRING,
-      defaultValue: "",
+      references:{
+        model: "Transcations",
+        key: 'id'
+      }
     },
     checkings_id: {
       type: DataTypes.INTEGER,
