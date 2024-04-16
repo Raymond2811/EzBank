@@ -37,6 +37,37 @@ router.get('/bankaccount', withAuth, async (req, res) => {
   }
 });
 
+router.post('/bankaccount', withAuth, async(req,res) => {
+  try {
+   const newCheckingAccount = await Checkings.create({
+    ...req.body,
+    user_id: req.session.user_id,
+   })
+   res.status(200).json(newCheckingAccount);
+  } catch (error) {
+   console.log(error);
+  }
+});
+
+router.delete('/bankaccount/:id', withAuth, async(req,res) =>{
+  try{
+    const checkingAccount = await Checkings.destroy({
+      where:{
+        id:req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
+
+    if(!checkingAccount) {
+      res.status(404).json({message: 'No checking account found with this id!'})
+      return;
+    }
+    res.status(200).json(checkingAccount);
+  } catch(error){
+    res.status(500).json(error);
+  }
+});
+
 router.get('/checking/:id', withAuth, async (req, res) => {
   try {
     const CheckingData = await Checkings.findByPk(req.session.user_id, {
