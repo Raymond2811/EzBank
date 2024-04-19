@@ -11,7 +11,7 @@ Transactions.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    cost:{
+    price:{
       type: DataTypes.INTEGER,
       allowNull: false,
     },

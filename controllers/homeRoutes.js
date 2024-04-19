@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {User, Checkings, AccOverview} = require('../models');
+const {User, Checkings, AccOverview, Transactions} = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', (req, res) => {
@@ -96,6 +96,34 @@ router.get('/checking/:id', withAuth, async (req, res) => {
   } catch (error) {
     console.log(error);  
     res.status(500).json(error);
+  }
+});
+
+router.post('/transactions', withAuth, async (req,res) =>{
+  try {
+    const { price, description} = req.body;
+
+    const checkingAccount = await Checkings.findOne({
+      where: {user_id:req.session.user_id}
+    });
+
+    if(!checkingAccount){
+      return res.status(404).json({message:'No checking account found for this user'})
+    }
+
+    const newTransaction = await Transactions.create({
+      price,
+      description,
+      checking_id: checkingAccount.id
+    });
+
+    const updatedBalance = checkingAccount.balance + parseInt(price);
+    await checkingAccount.update({balance: updatedBalance});
+
+    res.status(200).json(newTransaction);
+
+  } catch (error) {
+   console.log(error);
   }
 });
   
