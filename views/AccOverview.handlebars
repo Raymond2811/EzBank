@@ -15,6 +15,17 @@
   <div class="account-purchase">
     <h2>{{name}}</h2>
     <p>Balance: ${{balance}}</p>
+
+    <fornm id="transactionForm">
+      <label for="price"> Price: </label>
+      <input type="number" id="price" name="price" required>
+
+      <label for="description">Description:</label>
+      <input type="text" id="description" name="description" required>
+
+      <button type="submit"> Submit Transaction</button>
+    </fornm>
+
     <div class="transaction-history">
       <h3>Transaction History</h3>
       {{#if transactions.length}}
