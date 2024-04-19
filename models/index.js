@@ -1,6 +1,7 @@
 const User = require('./User');
 const Checkings = require('./Checkings');
 const AccOverview = require('./AccOverview');
+const Transactions = require('./Transactions')
 
 User.hasMany(Checkings, {
   foreignKey: 'user_id',
@@ -19,4 +20,8 @@ AccOverview.belongsTo(Checkings, {
   foreignKey: 'checkings_id',
 });
 
-module.exports = { User, Checkings, AccOverview };
+AccOverview.hasMany(Transactions,{
+  foreignKey: 'checkings_id',
+})
+
+module.exports = { User, Checkings, AccOverview, Transactions};
