@@ -21,7 +21,7 @@ AccOverview.belongsTo(Checkings, {
 });
 
 AccOverview.hasMany(Transactions,{
-  foreignKey: 'checkings_id',
+  foreignKey: 'transactions_id',
 })
 
 module.exports = { User, Checkings, AccOverview, Transactions};
