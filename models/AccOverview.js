@@ -21,10 +21,10 @@ AccOverview.init(
       allowNull: false,
       defaultValue: 0,
     },
-    transactions: {
-      type: DataTypes.STRING,
+    transactions_id: {
+      type: DataTypes.INTEGER,
       references:{
-        model: "Transcations",
+        model: "Transactions",
         key: 'id'
       }
     },
