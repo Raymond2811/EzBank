@@ -13,22 +13,22 @@
 
 <main>
   <h1>Welcome, {{name}}!</h1>
-  {{#each Checkings}}
-    <button class="card-button" data-id="{{id}}">
-      <div class="card">
-        <h2>{{name}}</h2>
-        <p>Balance: ${{balance}}</p>
-        <p>Date Created: {{format_date date_created}}</p>
-      </div>
-    </button>
-  {{/each}}
-
+  <ul>
+    {{#each Checkings}}
+      <li>
+        <button class="card-button" data-id="{{id}}">
+          <div class="card">
+            <h2>{{name}}</h2>
+            <p>Balance: ${{balance}}</p>
+            <p>Date Created: {{format_date date_created}}</p>
+            <button id="delete-button" data-id="{{id}}"> Delete Checking Account </button>
+          </div>
+        </button>
+      </li>
+    {{/each}}
+  </ul>
   <button id="newCheckingAccount">
     create new checking account!
-  </button>
-
-  <button id="deleteCheckingAccount">
-    Delete Checking Account
   </button>
 
   <script src="./js/checking.js"></script>

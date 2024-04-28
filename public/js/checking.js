@@ -7,6 +7,8 @@ cardButtons.forEach((button) => {
   });
 });
 
+document.getElementById('newCheckingAccount').addEventListener('click', newCheckingAccount);
+
 const newCheckingAccount = async () => {
   try {
    const response = await fetch('/bankaccount', {
@@ -21,7 +23,7 @@ const newCheckingAccount = async () => {
    });
 
    if(response.ok){
-    console.log('Successfully created new checking account');
+    location.reload();
    } else{
     console.error('Failed to create new checking account');
    }
@@ -36,21 +38,21 @@ const deleteCheckingAccount = async (checkingId) => {
     method:'DELETE'
    });
    if(response.ok){
-    console.log('Successfully deleted');
+    location.reload();
    } else{
-    console.error('Failed to delete checking account')
+    console.error('Fail to delete checking account')
    }
   } catch (error) {
    console.log(error);
   }
 };
 
-document.getElementById('newCheckingAccount').addEventListener('click',newCheckingAccount);
-
-document.getElementById('deleteCheckingAccount').addEventListener('click',()=>{
-  const confirmation = confirm('Are you sure you want to delete this checking account?');
-  if(confirmation){
-    const checkingId = document.querySelector('.card-button').getAttribute('data-id');
-    deleteCheckingAccount(checkingId);
-  }
+document.addEventListener('click', async (e) => {
+  if(e.target.id === 'delete-button'){
+    const confirmation = confirm('Are you sure you want to delete this checking account?');
+    if(confirmation){
+      const checkingId = e.target.dataset.id;
+      deleteCheckingAccount(checkingId);
+    }
+  }  
 });
