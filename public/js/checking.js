@@ -7,8 +7,6 @@ cardButtons.forEach((button) => {
   });
 });
 
-document.getElementById('newCheckingAccount').addEventListener('click', newCheckingAccount);
-
 const newCheckingAccount = async () => {
   try {
    const response = await fetch('/bankaccount', {
@@ -31,6 +29,8 @@ const newCheckingAccount = async () => {
    console.log(error);
   }
 };
+
+document.getElementById('newCheckingAccount').addEventListener('click', newCheckingAccount);
 
 const deleteCheckingAccount = async (checkingId) => {
   try {
