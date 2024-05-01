@@ -101,8 +101,12 @@ router.get('/checking/:id', withAuth, async (req, res) => {
 
 router.post('/transactions', withAuth, async (req,res) =>{
   try {
-    const { price, description} = req.body;
+    console.log('incoming request:', req.body);
+    const { price, description } = req.body;
 
+    if(!price || !description){
+      return res.status(400).json({ message: 'Price and description are required' })
+    }
     const checkingAccount = await Checkings.findOne({
       where: {user_id:req.session.user_id}
     });
@@ -123,7 +127,8 @@ router.post('/transactions', withAuth, async (req,res) =>{
     res.status(200).json(newTransaction);
 
   } catch (error) {
-   console.log(error);
+   console.log('Error creating transaction:', error);
+   res.status(500).json({ message: 'Internal server error' });
   }
 });
   

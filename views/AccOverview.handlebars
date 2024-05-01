@@ -12,7 +12,7 @@
 </header>
 
 <main>
-  <div class="account-purchase">
+  <div class="account-overview">
     <h2>{{name}}</h2>
     <p>Balance: ${{balance}}</p>
 
@@ -31,7 +31,7 @@
       {{#if transactions.length}}
         <ul>
           {{#each transactions}}
-            <li>{{this}}</li>
+            <li>Price: ${{this.price}} - Description: {{this.description}}</li>
           {{/each}}
         </ul>
       {{else}}
@@ -72,5 +72,5 @@
     </ul>
   </div>
 </footer>
-
+<script src="/js/transactions.js"></script>
 <script src="/js/logout.js"></script>
