@@ -11,11 +11,6 @@ Checkings.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      defaultValue: 'EzBank Checking Account',
-    },
     balance: {
       type: DataTypes.INTEGER,
       allowNull: false,
@@ -25,6 +20,13 @@ Checkings.init(
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
+    },
+    transactions_id: {
+      type: DataTypes.INTEGER,
+      references:{
+        model: "Transactions",
+        key: 'id'
+      }
     },
     user_id: {
       type: DataTypes.INTEGER,
